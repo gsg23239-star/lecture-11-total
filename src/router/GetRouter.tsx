@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router";
-import MainLayout from "../layouts/MainLayout.tsx";
+import MainLayout from "../Layouts/MainLayout.tsx";
 import Home from "../pages/Home.tsx";
-import TodoPage from "../pages/todo/TodoPages.tsx";
+import TodoPage from "../pages/todo/TodoPage.tsx";
+import CoinPage from "../pages/coin/CoinPage.tsx";
 
 const GetRouter = createBrowserRouter([
     {
@@ -15,6 +16,10 @@ const GetRouter = createBrowserRouter([
             {
                 path: "todo",
                 element: <TodoPage />,
+            },
+            {
+                path: "coin",
+                element: <CoinPage />,
             },
         ],
     },

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Outlet } from "react-router";
-import Header from "../components/Layout/Header.tsx";
+import Header from "../components/layout/Header.tsx";
 
 const LayoutWrapper= styled.div`
     display: flex;
@@ -21,19 +21,19 @@ const MainContent = styled.main`
         width: 8px;
     }
     &::-webkit-scrollbar-thumb {
-        background-color: ${props => props theme.colors.divider};
+        background-color: ${props => props.theme.colors.divider};
         border-radius: 4px;
     }
 `;
 
 function MainLayout() {
     return (
-        <layoutWrapper>
+        <LayoutWrapper>
             <Header />
-            <Maincontent>
+            <MainContent>
                 <Outlet />
-            </Maincontent>
-        </layoutWrapper>
+            </MainContent>
+        </LayoutWrapper>
     );
 }
 
