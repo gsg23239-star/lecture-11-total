@@ -20,7 +20,7 @@ export const LightTheme: DefaultTheme = {
     },
 };
 export const lightTheme: DefaultTheme = {
-    color: {
+    colors: {
         background: {
             default: "#f4f6f8",
             paper: "#ffffff",
@@ -40,7 +40,7 @@ export const lightTheme: DefaultTheme = {
 };
 
 export const DarkTheme: DefaultTheme = {
-    color: {
+    colors: {
         background: {
             default: "#121212",
             paper: "#1e1e1e",

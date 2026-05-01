@@ -8,8 +8,8 @@ const GlobalStyle = createGlobalStyle`
 }
 
 body {
-    background-color: ${props => props.theme.color.background.default};
-    color: ${props => props.theme.color.text.default};
+    background-color: ${props => props.theme.colors.background.default};
+    color: ${props => props.theme.colors.text.default};
     font-family: "pretendard", -apple-systems, sans-serif;
     transition: background-color 0.5s, color 0.5s;
 }

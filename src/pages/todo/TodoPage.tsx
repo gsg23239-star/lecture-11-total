@@ -1,6 +1,6 @@
 import { useState, useEffect, type SubmitEvent } from "react";
 import styled from "styled-components";
-import { FaPlus, FaTrash, FaCheck } from "react-icons/fa";
+import { FaCheck, FaPlus, FaTrash } from "react-icons/fa";
 
 type Todo = {
     id: number;
@@ -78,10 +78,10 @@ const TodoItem = styled.li<{ $isCompleted: boolean }>`
     display: flex;
     align-items: center;
     gap: 15px;
-    transition: all 0.2s ease;
+    transition: all 0.5s;
 
     &:hover {
-        border-color: ${props => props.theme.colors.primary}50;
+        border-color: ${props => props.theme.colors.primary};
     }
 
     span {
@@ -95,7 +95,7 @@ const TodoItem = styled.li<{ $isCompleted: boolean }>`
     }
 `;
 
-const IconButton = styled.button<{ $colorType: "check" | "delete" }>`
+const IconButton = styled.button<{ $colorType: "success" | "error" | "warning" | "info" }>`
     background: none;
     border: none;
     cursor: pointer;
@@ -103,10 +103,7 @@ const IconButton = styled.button<{ $colorType: "check" | "delete" }>`
     display: flex;
     align-items: center;
     color: ${props =>
-        props.$colorType === "check" ? props.theme.colors.success : props.theme.colors.error};
-    opacity: 0.6;
-    transition: opacity 0.2s;
-
+        props.theme.colors[props.$colorType]};
     &:hover {
         opacity: 1;
     }
@@ -167,11 +164,11 @@ function TodoPage() {
             <TodoList>
                 {todos.map(todo => (
                     <TodoItem key={todo.id} $isCompleted={todo.isCompleted}>
-                        <IconButton $colorType="check" onClick={() => toggleTodo(todo.id)}>
+                        <IconButton $colorType="success" onClick={() => toggleTodo(todo.id)}>
                             <FaCheck />
                         </IconButton>
                         <span>{todo.text}</span>
-                        <IconButton $colorType="delete" onClick={() => deleteTodo(todo.id)}>
+                        <IconButton $colorType="error" onClick={() => deleteTodo(todo.id)}>
                             <FaTrash />
                         </IconButton>
                     </TodoItem>

@@ -1,6 +1,6 @@
+import type { Coin } from "./CoinPage";
 import styled from "styled-components";
 import { FaInfoCircle } from "react-icons/fa";
-import type { Coin } from "./CoinPage";
 
 interface CoinDetailProps {
     selectedCoin: Coin | null;
@@ -27,6 +27,7 @@ const EmptyDetail = styled.div`
 
     svg {
         font-size: 48px;
+        color: ${props => props.theme.colors.warning};
         opacity: 0.5;
     }
 `;
@@ -76,7 +77,7 @@ const InfoCard = styled.div`
     }
 `;
 
-function CoinDetail({ selectedCoin }: CoinDetailProps) {
+function CoinDetail({ selectedCoin }:CoinDetailProps) {
     if (!selectedCoin) {
         return (
             <DetailSection>
